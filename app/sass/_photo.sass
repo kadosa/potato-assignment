@@ -1,0 +1,108 @@
+.photo-thumb
+    position: relative
+    padding: 20px
+    border-bottom: 1px solid #ececec
+    margin-bottom: 5px
+    @extend %clearfix
+
+
+.detail-container
+    @extend %clearfix
+    .detail-header
+        padding: 10px 20px 0
+        position: relative
+        border-bottom: 1px solid #ececec
+
+.back-btn
+    position: absolute
+    top: 10px
+    right: 20px
+
+.detail-description
+    img, p:first-child
+        display: none
+
+.photo-content
+    @extend %clearfix
+    margin-bottom: 20px
+    padding: 10px 20px 0
+
+.photo-column
+    float: left
+    position: relative
+    width: 250px
+
+.photo-details
+    width: 530px
+
+.photo-image
+    margin-right: 15px
+
+.photo-image, .thumb-image
+    display: block
+
+.thumb-image
+    max-width:100%
+
+.photo-title
+    width: 95%
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+.title-link
+    text-decoration: none
+
+.thumb-copy
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+
+.thumb-copy-item
+    margin: 0 15px 0 0
+
+.thumb-author, .thumb-date, .thumb-link
+    order: 1
+
+.g-plusone
+    position: absolute
+    bottom: 10px
+    right: 20px
+
+.show-more-btn
+    text-align:center
+    margin: 20px 0 20px 0
+
+    button
+        padding: 8px
+
+@media screen and (max-width: 800px)
+    .photo-column
+        width: 35%
+
+    .photo-details
+        width: 65%
+
+    .photo-content, .detail-header
+        padding-left: 15px
+        padding-right: 15px
+
+    .thumb-copy
+        width: 280px
+
+    .thumb-author, .thumb-link
+        order: 2
+
+@media screen and (max-width: 640px)
+    .detail-container
+        .photo-column
+            width: 100%
+            float: none
+        .thumb-image
+            margin: 0 auto
+        .photo-title
+            width: 80%
+
+        .photo-content, .detail-header
+            padding-left: 10px
+            padding-right: 10px
