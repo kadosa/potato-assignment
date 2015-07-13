@@ -37,7 +37,6 @@ var PhotoListView = Backbone.View.extend({
                 model: photoItem
             });
             this.$photoList.append(photoThumbView.render());
-            photoThumbView.enter();
             this.photoThumbList.push(photoThumbView);
         }, this));
 
@@ -116,6 +115,9 @@ var PhotoListView = Backbone.View.extend({
     onCollectionUpdate: function() {
         this.collection.getFirstPage();
         this.$photoList.empty();
+        _.each(this.photoThumbList, function(thumbView) {
+            thumbView.remove();
+        });
         this.render();
     },
 

@@ -1,5 +1,5 @@
 @import normalize
-@import scss-mixins
+@import variables
 @import typography
 @import preloader
 @import photo
@@ -24,20 +24,20 @@ body
     border-radius: 6px
     overflow: hidden
 
-@media screen and (max-width: 800px)
+@media #{$breakpoint-m}
     .photo-container
         width: 90%
 
     .photo-thumb
         padding: 15px
 
-@media screen and (max-width: 640px)
+@media #{$breakpoint-s}
+
+    body
+        font-size: 80%
+    .photo-container
+        width: 100%
+
     .photo-thumb
         padding: 10px
 
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2)
-    body
-        font-size: 120%
-    .photo-container
-        width: 100%

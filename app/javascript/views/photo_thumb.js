@@ -14,20 +14,11 @@ var PhotoThumbView = Backbone.View.extend({
 
     render: function() {
         this.$el.append(template(this.model.toJSON()));
-        TweenMax.set(this.el, {
-            autoAlpha: 0
-        });
         gapi.plusone.render(this.$el.find('.g-plusone')[0], {
             'href': this.model.get('link')
         });
         return this.$el;
-    },
-
-    enter: function() {
-        TweenMax.to(this.el, 0.4, {
-            autoAlpha: 1
-        });
-    },
+    }
 });
 
 module.exports = PhotoThumbView;

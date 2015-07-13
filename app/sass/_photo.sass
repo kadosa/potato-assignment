@@ -76,7 +76,7 @@
     button
         padding: 8px
 
-@media screen and (max-width: 800px)
+@media #{$breakpoint-m}
     .photo-column
         width: 35%
 
@@ -93,7 +93,16 @@
     .thumb-author, .thumb-link
         order: 2
 
-@media screen and (max-width: 640px)
+@media #{$breakpoint-s}
+    .thumb-copy
+        width: 220px
+        margin-bottom: 20px
+
+    .g-plusone
+        position: relative
+        bottom: auto
+        right: auto
+
     .detail-container
         .photo-column
             width: 100%
