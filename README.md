@@ -16,6 +16,8 @@ I've used routes to manage application state as I was trying to simulate a scena
 
 For the amount of animation present in the app, including TweenMax might feel like an overkill, I just opted to use it to show that it's my go-to library when it comes to animations.
 
+I've used the Backbone Paginator plugin for the 'Load more' style pagination. It would work well with a REST api as well.
+
 
 ## To-do
 

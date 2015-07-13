@@ -89,7 +89,7 @@ var PhotoListView = Backbone.View.extend({
         var newArray = this.initialCollection.filter(function(photo) {
             return photo.get('tags').indexOf(searchString) !== -1
         });
-        if (this.collection.fullCollection.models !== newArray) {
+        if (!_.isEqual(this.collection.fullCollection.models, newArray)) {
             this.collection.fullCollection.reset(newArray);
         }
 
@@ -101,7 +101,7 @@ var PhotoListView = Backbone.View.extend({
      * @return {[type]} [description]
      */
     onSearchCleared: function() {
-        if (this.collection.fullCollection.models !== this.initialCollection.models) {
+        if (!_.isEqual(this.collection.fullCollection.models, this.initialCollection.models)) {
             this.collection.fullCollection.reset(this.initialCollection.models);
         }
 
@@ -121,10 +121,13 @@ var PhotoListView = Backbone.View.extend({
         this.render();
     },
 
-    hide: function() {
+    hide: function(callback) {
         TweenMax.to(this.el, 0.4, {
             autoAlpha: 0,
-            display: 'none'
+            display: 'none',
+            onComplete: function() {
+                callback()
+            }
         });
     },
 

@@ -14,7 +14,7 @@ var AppView = Backbone.View.extend({
     initialize: function(options) {
 
         this.setupListeners();
-        _.bindAll(this, 'showPhotoViewList');
+        _.bindAll(this, 'showPhotoViewList', 'createPhotoDetailView');
     },
 
     render: function() {
@@ -22,8 +22,8 @@ var AppView = Backbone.View.extend({
         this.$el.append(this.photoListView.render());
     },
 
-    hidePhotoListView: function() {
-        this.photoListView.hide();
+    hidePhotoListView: function(callback) {
+        this.photoListView.hide(callback);
     },
 
     showPhotoViewList: function() {
@@ -42,9 +42,10 @@ var AppView = Backbone.View.extend({
     },
 
     onPhotoPage: function(id) {
+        var currentPhoto = this.photoListView.collection.fullCollection.get(id);
+        this.createPhotoDetailView(currentPhoto);
+        this.hidePhotoListView(this.currentPhotoView.enter);
 
-        this.hidePhotoListView();
-        this.createPhotoDetailView(this.photoListView.collection.fullCollection.get(id));
     },
 
     onPhotosLoaded: function(photoCollection) {
@@ -59,7 +60,6 @@ var AppView = Backbone.View.extend({
             model: photoModel
         });
         this.$el.append(this.currentPhotoView.render());
-        this.currentPhotoView.enter();
     }
 
 });

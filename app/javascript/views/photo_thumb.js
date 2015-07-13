@@ -12,6 +12,11 @@ var PhotoThumbView = Backbone.View.extend({
 
     },
 
+    /**
+     * Compile the template
+     * and manually render google plus one buttons.
+     * @return {[type]} [description]
+     */
     render: function() {
         this.$el.append(template(this.model.toJSON()));
         gapi.plusone.render(this.$el.find('.g-plusone')[0], {

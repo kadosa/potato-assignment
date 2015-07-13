@@ -1,6 +1,7 @@
 'use sctrict';
 var Backbone = require('backbone');
 var $ = require('jquery');
+var _ = require('underscore');
 var template = require('../templates/photo_detail');
 Backbone.$ = $;
 
@@ -10,6 +11,7 @@ var PhotoDetailView = Backbone.View.extend({
 
     initialize: function(options) {
         var test = $(this.model.get('description'));
+        _.bindAll(this, 'enter');
     },
 
     render: function() {
