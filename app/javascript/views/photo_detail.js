@@ -17,6 +17,9 @@ var PhotoDetailView = Backbone.View.extend({
         TweenMax.set(this.el, {
             autoAlpha: 0
         });
+        gapi.plusone.render(this.$el.find('.g-plusone')[0], {
+            'href': this.model.get('link')
+        });
         return this.$el;
     },
 

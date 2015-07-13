@@ -64,7 +64,6 @@
     "dependencies": {
         "backbone": "~1.1.2",
         "backbone.paginator": "^2.0.2",
-        "google-client-api": "^1.0.4",
         "gsap": "^1.17.0",
         "jquery": "~2.1.0"
     }

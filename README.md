@@ -1,6 +1,10 @@
 
 
-Portfolio
+Potato Assignment
 ============
 
-Portfolio site built with React, served by a Rails back-end.
+A simple Backbone application to showcase a list of Flickr images.
+It lists photos tagged with 'potato'. Features simple pagination and filtering.
+
+
+
